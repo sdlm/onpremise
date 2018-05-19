@@ -25,11 +25,6 @@ services:
       - ./common.env
     volumes:
       - ./data/sentry:/var/lib/sentry/files
-    links:
-      - redis
-      - postgres
-      - memcached
-      - smtp
     ports:
       - '80:9000'
 
@@ -40,11 +35,6 @@ services:
       - ./common.env
     volumes:
       - ./data/sentry:/var/lib/sentry/files
-    links:
-      - redis
-      - postgres
-      - memcached
-      - smtp
     command: run cron
 
   sentry-worker-1:
@@ -54,9 +44,4 @@ services:
       - ./common.env
     volumes:
       - ./data/sentry:/var/lib/sentry/files
-    links:
-      - redis
-      - postgres
-      - memcached
-      - smtp
     command: run worker

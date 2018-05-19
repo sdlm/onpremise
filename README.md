@@ -14,9 +14,8 @@ will get you up and running in no time!
 
 There may need to be modifications to the included `docker-compose.yml` file to accommodate your needs or your environment. These instructions are a guideline for what you should generally do.
 
-1. `docker-compose run --rm sentry-base config generate-secret-key` - Generate a secret key.
-    Add it to `docker-compose.yml` in `base` as `SENTRY_SECRET_KEY`.
-2. `docker-compose run --rm -it sentry-base upgrade` - Build the database.
+1. `docker-compose run --rm sentry-base config generate-secret-key` - Generate a secret key. Add it to `common.env` in `SENTRY_SECRET_KEY`.
+2. `docker-compose run --rm sentry-base upgrade` - Build the database.
     Use the interactive prompts to create a user account.
 3. `docker-compose up -d` - Lift all services (detached/background mode).
 4. Access your instance at `localhost:80`!
